@@ -12,7 +12,7 @@ phases:
             - ng build --prod
     post_build:
          commands:
-            - aws s3 cp dist s3://aws-continuous-delivery-predemo
+            - aws s3 cp --recursive dist s3://aws-continuous-delivery-predemo
             - echo Build completed on `date`
 artifacts:
     files:
