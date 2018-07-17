@@ -12,10 +12,10 @@ phases:
             - ng build --prod
     post_build:
          commands:
-            - aws s3 sync --delete dist s3://continuous-delivery-front-demo
+            - aws s3 sync --delete dist/continuous-delivery-front-demo s3://continuous-delivery-front-demo
             - echo Build completed on `date`
 artifacts:
     files:
         - '**/*'
-    base-directory: 'dist*'
+    base-directory: 'dist/*'
     discard-paths: yes
