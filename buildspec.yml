@@ -12,7 +12,7 @@ phases:
             - ng build --prod
     post_build:
          commands:
-            - aws s3 sync --delete dist s3://continuous-delivery-predemo
+            - aws s3 sync --delete dist s3://continuous-delivery-front-demo
             - echo Build completed on `date`
 artifacts:
     files:
